@@ -92,6 +92,9 @@ body{
 #tic-toe-div > * {
 border: 1px black solid;
 }
+#tic-toe-div > .selected {
+background-color: aqua;
+}
 #computer-container {
     grid-column: 4/5;
     background-color: goldenrod;
