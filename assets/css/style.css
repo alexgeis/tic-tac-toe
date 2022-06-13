@@ -9,6 +9,7 @@
 
 body{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 18px;
 }
 
 .body-container {
@@ -48,10 +49,50 @@ body{
     grid-auto-flow: column;
     gap: 10px;
 }
+.main-container .content-container {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 1fr) 1fr ;
+    gap: 10px;
+}
 
-#game-container {
+#player-container,
+#game-container,
+#computer-container {
     height: 100%;
-    background-color: white;
-    padding: 1rem;
+    padding: 2rem 1rem 1rem;
+}
+#player-container img,
+#computer-container img {
+    height: 80px;
+    width: 80px;
+    border-radius: 30%;
+}
+#player-container,
+#computer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#player-container {
+    grid-column: 1/2;
+    background-color: rgb(108, 49, 49);
+}
+#game-container {
+    grid-column: 2/4;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 80px repeat(2, 1fr) 1fr;
+}
+#tic-toe-div {
+    grid-row: 2/4;
+    display: grid;
+    grid-template: repeat(3,1fr) / repeat(3,1fr);
+}
+#tic-toe-div > * {
+border: 1px black solid;
+}
+#computer-container {
+    grid-column: 4/5;
+    background-color: goldenrod;
 }
