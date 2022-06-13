@@ -16,12 +16,10 @@ gameboardEl.addEventListener("click", selectBox);
 
 function selectBox(event) {
 	let element = event.target;
-	let children = element.parentElement.children;
-	let ticDivs = [...children];
+	let ticDivs = [...element.parentElement.children];
 	console.log(element);
 	for (let i = 0; i < ticDivs.length; i++) {
-		const box = ticDivs[i];
-		box.classList.remove(".selected");
+		ticDivs[i].classList.remove("selected");
 	}
 	element.classList.toggle("selected");
 }
