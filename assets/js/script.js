@@ -1,3 +1,14 @@
+//date
+const currentYear = document.getElementById("currentYear");
+currentYear.textContent = new Date().getFullYear();
+
+//DEFAULTS
+const userScore = localStorage.getItem("userScore");
+const compScore = localStorage.getItem("compScore");
+const DEFAULT_COLOR = "#333" || savedColor;
+const DEFAULT_USER_SCORE = 0;
+const DEFAULT_COMP_SCORE = 0;
+
 const gameboardEl = document.querySelector("#tic-toe-div");
 
 const renderGameboard = () => {
