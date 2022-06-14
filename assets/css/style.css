@@ -98,6 +98,14 @@ align-items: center;
 #tic-toe-div > .selected {
 background-color: aqua;
 }
+#clear-btn-div {
+    margin: 0 auto;   
+}
+#clear-board {
+    width: 20ch;
+    padding: .5rem 1rem;
+    margin: 1rem 0;
+}
 #computer-container {
     grid-column: 4/5;
     background-color: goldenrod;
