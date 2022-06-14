@@ -84,6 +84,9 @@ body{
     display: grid;
     grid-template-rows: 80px repeat(2, 1fr) 1fr;
 }
+#game-display {
+    text-align: center;
+}
 #tic-toe-div {
     grid-row: 2/4;
     display: grid;
