@@ -94,9 +94,9 @@ function computerTurn() {
 		console.log("comp-selected class added");
 		[...gameboardEl.children][randoNum].classList.add("comp-selected");
 		[...gameboardEl.children][randoNum].textContent = "O";
+		// checkWin();
 		setCurrentTurn("player");
 		clearTimeout(compTurnTimer);
-		// checkWin();
 	}, 700);
 }
 
@@ -148,7 +148,7 @@ function checkWin() {
 		userScoreDisplay.textContent = `Score: ${currentUserScore}`;
 		gameboardEl.removeEventListener("click", selectBox);
 		clearBtn.textContent = "RESET BOARD";
-		return true;
+		// return true;
 	} else if (
 		//COMPUTER VALIDATIONS
 		//top row
@@ -188,10 +188,11 @@ function checkWin() {
 		gameDisplay.textContent = `Computer wins ya dingus!`;
 		currentCompScore++;
 		setCurrentCompScore(currentCompScore);
+		console.log({ currentCompScore });
 		compScoreDisplay.textContent = `Score: ${currentCompScore}`;
 		gameboardEl.removeEventListener("click", selectBox);
 		clearBtn.textContent = "RESET BOARD";
-		return false;
+		// return false;
 	} else if (
 		// validate for ties
 		([...gameboardEl.children][0].textContent === "O" ||
