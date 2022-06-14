@@ -34,3 +34,9 @@ function selectBox(event) {
 	}
 	element.classList.toggle("selected");
 }
+
+window.onload = () => {
+	// setupGrid(DEFAULT_SIZE);
+	// activateButton(DEFAULT_MODE);
+	// colorPicker.value = savedColor;
+};

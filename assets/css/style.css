@@ -99,3 +99,24 @@ background-color: aqua;
     grid-column: 4/5;
     background-color: goldenrod;
 }
+
+.footer .content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+.footer img {
+    color: var(--primary-dark);
+    width: 34px;
+    height: 34px;
+    transition: transform 0.3s ease-in-out;
+}
+  
+.footer img:hover {
+    transform: rotate(360deg) scale(1.2);
+}
