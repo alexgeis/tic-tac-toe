@@ -6,8 +6,8 @@ currentYear.textContent = new Date().getFullYear();
 const userScore = localStorage.getItem("userScore");
 const compScore = localStorage.getItem("compScore");
 const DEFAULT_COLOR = "#333" || savedColor;
-const DEFAULT_USER_SCORE = 0;
-const DEFAULT_COMP_SCORE = 0;
+const DEFAULT_USER_SCORE = 0 || userScore;
+const DEFAULT_COMP_SCORE = 0 || compScore;
 
 const gameboardEl = document.querySelector("#tic-toe-div");
 
@@ -30,9 +30,22 @@ function selectBox(event) {
 	let ticDivs = [...element.parentElement.children];
 	console.log(element);
 	for (let i = 0; i < ticDivs.length; i++) {
+		// if (ticDivs[i].classlist.contains("selected")) {}
 		ticDivs[i].classList.remove("selected");
 	}
 	element.classList.toggle("selected");
+	element.textContent = "X";
+}
+
+const clearBtn = document.querySelector("#clear-board");
+clearBtn.addEventListener("click", clearBoard);
+
+function clearBoard() {
+	for (let i = 0; i < gameSquaresArr.length; i++) {
+		const element = gameSquaresArr[i];
+		element.classList.remove("selected");
+		element.textContent = "";
+	}
 }
 
 window.onload = () => {
