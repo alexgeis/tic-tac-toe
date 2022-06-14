@@ -5,12 +5,28 @@ currentYear.textContent = new Date().getFullYear();
 //DEFAULTS
 const userScore = localStorage.getItem("userScore");
 const compScore = localStorage.getItem("compScore");
-const DEFAULT_COLOR = "#333" || savedColor;
+const gameTurn = localStorage.getItem("gameTurn");
+const DEFAULT_TURN = "player" || gameTurn;
 const DEFAULT_USER_SCORE = 0 || userScore;
 const DEFAULT_COMP_SCORE = 0 || compScore;
+//state variables
+let currentTurn = DEFAULT_TURN;
+let currentUserScore = DEFAULT_USER_SCORE;
+let currentCompScore = DEFAULT_COMP_SCORE;
+//state update functions
+function setCurrentTurn(newTurn) {
+	// activateButton(newTurn);
+	currentTurn = newTurn;
+	localStorage.setItem("gameTurn", currentTurn);
+}
+function setCurrentUserScore(newScore) {
+	currentUserScore = newScore;
+}
+function setCurrentCompScore(newScore) {
+	currentCompScore = newScore;
+}
 
 const gameboardEl = document.querySelector("#tic-toe-div");
-
 const renderGameboard = () => {
 	for (let i = 0; i < 9; i++) {
 		const divEl = document.createElement("div");
@@ -34,6 +50,7 @@ function selectBox(event) {
 		ticDivs[i].classList.remove("selected");
 	}
 	element.classList.toggle("selected");
+
 	element.textContent = "X";
 }
 
