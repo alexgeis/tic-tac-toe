@@ -98,6 +98,9 @@ align-items: center;
 #tic-toe-div > .selected {
 background-color: aqua;
 }
+#tic-toe-div > .comp-selected {
+background-color:mediumslateblue;
+}
 #clear-btn-div {
     margin: 0 auto;   
 }

@@ -18,6 +18,7 @@ function setCurrentTurn(newTurn) {
 	// activateButton(newTurn);
 	currentTurn = newTurn;
 	localStorage.setItem("gameTurn", currentTurn);
+	if (newTurn === "computer") computerTurn();
 }
 function setCurrentUserScore(newScore) {
 	currentUserScore = newScore;
@@ -34,9 +35,10 @@ const renderGameboard = () => {
 		gameboardEl.appendChild(divEl);
 	}
 };
-renderGameboard();
 
 const gameSquares = gameboardEl.children;
+console.log(gameboardEl.children);
+console.log(gameSquares);
 const gameSquaresArr = [...gameSquares];
 console.log(gameSquaresArr);
 gameboardEl.addEventListener("click", selectBox);
@@ -44,28 +46,41 @@ gameboardEl.addEventListener("click", selectBox);
 function selectBox(event) {
 	let element = event.target;
 	let ticDivs = [...element.parentElement.children];
-	console.log(element);
+	if (element.textContent !== "") return;
 	for (let i = 0; i < ticDivs.length; i++) {
 		// if (ticDivs[i].classlist.contains("selected")) {}
-		ticDivs[i].classList.remove("selected");
+		ticDivs[i].classList.remove("selected", "comp-selected");
 	}
 	element.classList.toggle("selected");
 
 	element.textContent = "X";
+	setCurrentTurn("computer");
 }
 
 const clearBtn = document.querySelector("#clear-board");
 clearBtn.addEventListener("click", clearBoard);
 
 function clearBoard() {
-	for (let i = 0; i < gameSquaresArr.length; i++) {
-		const element = gameSquaresArr[i];
+	for (let i = 0; i < [...gameboardEl.children].length; i++) {
+		const element = [...gameboardEl.children][i];
 		element.classList.remove("selected");
 		element.textContent = "";
 	}
 }
 
+function computerTurn() {
+	let randoNum = Math.floor(Math.random() * 9);
+	if ([...gameboardEl.children][randoNum].textContent !== "") computerTurn();
+
+	const compTurnTimer = setTimeout(() => {
+		[...gameboardEl.children][randoNum].classList.add("comp-selected");
+		[...gameboardEl.children][randoNum].textContent = "O";
+		setCurrentTurn("player");
+		clearInterval(compTurnTimer);
+	}, 1000);
+}
 window.onload = () => {
+	renderGameboard();
 	// setupGrid(DEFAULT_SIZE);
 	// activateButton(DEFAULT_MODE);
 	// colorPicker.value = savedColor;
