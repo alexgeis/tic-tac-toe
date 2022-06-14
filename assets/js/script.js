@@ -13,12 +13,14 @@ const DEFAULT_COMP_SCORE = 0 || compScore;
 let currentTurn = DEFAULT_TURN;
 let currentUserScore = DEFAULT_USER_SCORE;
 let currentCompScore = DEFAULT_COMP_SCORE;
+let currentWinner = false;
 //state update functions
 function setCurrentTurn(newTurn) {
 	// activateButton(newTurn);
 	currentTurn = newTurn;
 	localStorage.setItem("gameTurn", currentTurn);
 	if (newTurn === "computer") computerTurn();
+	else if (newTurn === "player") checkWin();
 }
 function setCurrentUserScore(newScore) {
 	currentUserScore = newScore;
@@ -52,6 +54,7 @@ function selectBox(event) {
 
 	element.textContent = "X";
 	checkWin();
+	setCurrentTurn("computer");
 }
 
 const clearBtn = document.querySelector("#clear-board");
@@ -63,14 +66,17 @@ function clearBoard() {
 		element.classList.remove("selected", "comp-selected");
 		element.textContent = "";
 	}
+	gameDisplay.textContent = ``;
 	clearBtn.textContent = "CLEAR BOARD";
+	currentWinner = false;
 	gameboardEl.addEventListener("click", selectBox);
 }
 
 const generateNumber0to8 = () => Math.floor(Math.random() * 9);
 let randoNum = generateNumber0to8();
-console.log({ randoNum });
 function computerTurn() {
+	//valide if someone has already won
+	if (currentWinner === true) return;
 	//validate if gameboard is full
 	//if content exists, push to content array
 	let contentArray = [...gameboardEl.children].filter(
@@ -90,8 +96,8 @@ function computerTurn() {
 		[...gameboardEl.children][randoNum].textContent = "O";
 		setCurrentTurn("player");
 		clearTimeout(compTurnTimer);
+		// checkWin();
 	}, 700);
-	checkWin();
 }
 
 const userScoreDisplay = document.querySelector("#player-score");
@@ -134,9 +140,11 @@ function checkWin() {
 			[...gameboardEl.children][7].textContent === "X" &&
 			[...gameboardEl.children][8].textContent === "X")
 	) {
+		currentWinner = true;
 		gameDisplay.textContent = `You win hot stuff!`;
-		const newUserScore = currentUserScore++;
-		setCurrentUserScore(newUserScore);
+		currentUserScore++;
+		setCurrentUserScore(currentUserScore);
+		console.log({ currentUserScore });
 		userScoreDisplay.textContent = `Score: ${currentUserScore}`;
 		gameboardEl.removeEventListener("click", selectBox);
 		clearBtn.textContent = "RESET BOARD";
@@ -176,15 +184,39 @@ function checkWin() {
 			[...gameboardEl.children][7].textContent === "O" &&
 			[...gameboardEl.children][8].textContent === "O")
 	) {
+		currentWinner = true;
 		gameDisplay.textContent = `Computer wins ya dingus!`;
-		const newCompScore = currentCompScore++;
-		setCurrentCompScore(newCompScore);
+		currentCompScore++;
+		setCurrentCompScore(currentCompScore);
 		compScoreDisplay.textContent = `Score: ${currentCompScore}`;
 		gameboardEl.removeEventListener("click", selectBox);
 		clearBtn.textContent = "RESET BOARD";
 		return false;
+	} else if (
+		// validate for ties
+		([...gameboardEl.children][0].textContent === "O" ||
+			[...gameboardEl.children][0].textContent === "X") &&
+		([...gameboardEl.children][1].textContent === "O" ||
+			[...gameboardEl.children][1].textContent === "X") &&
+		([...gameboardEl.children][2].textContent === "O" ||
+			[...gameboardEl.children][2].textContent === "X") &&
+		([...gameboardEl.children][3].textContent === "O" ||
+			[...gameboardEl.children][3].textContent === "X") &&
+		([...gameboardEl.children][4].textContent === "O" ||
+			[...gameboardEl.children][4].textContent === "X") &&
+		([...gameboardEl.children][5].textContent === "O" ||
+			[...gameboardEl.children][5].textContent === "X") &&
+		([...gameboardEl.children][6].textContent === "O" ||
+			[...gameboardEl.children][6].textContent === "X") &&
+		([...gameboardEl.children][7].textContent === "O" ||
+			[...gameboardEl.children][7].textContent === "X") &&
+		([...gameboardEl.children][8].textContent === "O" ||
+			[...gameboardEl.children][8].textContent === "X")
+	) {
+		gameDisplay.textContent = `It's a tie! Clear the board to play again.`;
 	} else {
-		if (currentTurn === "player") setCurrentTurn("computer");
+		// if (currentTurn === "player") setCurrentTurn("computer");
+		// setCurrentTurn("player");
 		console.log("enter check win else");
 		// else
 	}
