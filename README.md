@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/alexgeis/repo_name">
+  <a href="https://github.com/alexgeis/tic-tac-toe">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -28,14 +28,14 @@
   <p align="center">
     X's and O'x - 3 in a row.
     <br />
-    <a href="https://github.com/alexgeis/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/alexgeis/tic-tac-toe"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a id="deployed_link" href="https://github.com/alexgeis/repo_name">View Demo</a>
+    <a id="deployed_link" href="https://github.com/alexgeis/tic-tac-toe">View Demo</a>
     ·
-    <a href="https://github.com/alexgeis/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/alexgeis/tic-tac-toe/issues">Report Bug</a>
     ·
-    <a href="https://github.com/alexgeis/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/alexgeis/tic-tac-toe/issues">Request Feature</a>
   </p>
 </div>
 
@@ -49,13 +49,13 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
+    <!-- <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
-    </li>
+    </li> -->
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -78,7 +78,7 @@ style="display: block;
     margin-right: auto;
     width: 60%;"/></p></a>
 
-Search and replace keywords: `deployed_link`, `product-screenshot`, `repo_name`, `Tic-tac-toe`, `X's and O'x - 3 in a row.`
+Search and replace keywords: `deployed_link`, `product-screenshot`, `tic-tac-toe`, `Tic-tac-toe`, `X's and O'x - 3 in a row.`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -96,7 +96,7 @@ Search and replace keywords: `deployed_link`, `product-screenshot`, `repo_name`,
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+<!-- ## Getting Started
 
 Instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -115,7 +115,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/alexgeis/repo_name.git
+   git clone https://github.com/alexgeis/tic-tac-toe.git
    ```
 3. Install NPM packages
    ```sh
@@ -126,7 +126,7 @@ This is an example of how to list things you need to use the software and how to
    const API_KEY = "ENTER YOUR API";
    ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">back to top</a>)</p> -->
 
 <!-- USAGE EXAMPLES -->
 
@@ -153,7 +153,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
   - [ ] add a color picker for this purpose
 - [ ] light/dark theme toggle
 
-<!-- See the [open issues](https://github.com/alexgeis/repo_name/issues) for a full list of proposed features (and known issues). -->
+<!-- See the [open issues](https://github.com/alexgeis/tic-tac-toe/issues) for a full list of proposed features (and known issues). -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -195,7 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Alex Geis - siegxela@gmail.com
 
-Project Link: [https://github.com/alexgeis/repo_name](https://github.com/alexgeis/repo_name)
+Project Link: [https://github.com/alexgeis/tic-tac-toe](https://github.com/alexgeis/tic-tac-toe)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -214,17 +214,17 @@ Helpful resources and kudos.
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-<!-- [contributors-shield]: https://img.shields.io/github/contributors/alexgeis/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/alexgeis/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/alexgeis/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/alexgeis/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/alexgeis/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/alexgeis/repo_name/stargazers -->
+<!-- [contributors-shield]: https://img.shields.io/github/contributors/alexgeis/tic-tac-toe.svg?style=for-the-badge
+[contributors-url]: https://github.com/alexgeis/tic-tac-toe/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/alexgeis/tic-tac-toe.svg?style=for-the-badge
+[forks-url]: https://github.com/alexgeis/tic-tac-toe/network/members
+[stars-shield]: https://img.shields.io/github/stars/alexgeis/tic-tac-toe.svg?style=for-the-badge
+[stars-url]: https://github.com/alexgeis/tic-tac-toe/stargazers -->
 
-[issues-shield]: https://img.shields.io/github/issues/alexgeis/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/alexgeis/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/alexgeis/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/alexgeis/repo_name/blob/master/LICENSE.txt
+[issues-shield]: https://img.shields.io/github/issues/alexgeis/tic-tac-toe.svg?style=for-the-badge
+[issues-url]: https://github.com/alexgeis/tic-tac-toe/issues
+[license-shield]: https://img.shields.io/github/license/alexgeis/tic-tac-toe.svg?style=for-the-badge
+[license-url]: https://github.com/alexgeis/tic-tac-toe/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alexngeis
 [product-screenshot]: images/screenshot.png
