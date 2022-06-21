@@ -43,12 +43,12 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
+    <!-- <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
       </ul>
-    </li>
+    </li> -->
+        <li><a href="#built-with">Built With</a></li>
     <!-- <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -67,7 +67,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+<!-- ## About The Project -->
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 <!-- <a href="https://example.com">
@@ -78,7 +78,7 @@ style="display: block;
     margin-right: auto;
     width: 60%;"/></p></a> -->
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
 
 ### Built With
 
