@@ -20,18 +20,18 @@
 <br />
 <div align="center">
   <a href="https://github.com/alexgeis/tic-tac-toe">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./assets/icons/favicon.ico" alt="Logo" width="40" height="40">
   </a>
 
 <h3 align="center">Tic-tac-toe</h3>
 
   <p align="center">
-    X's and O'x - 3 in a row.
+    X's and O's - 3 in a row.
     <br />
     <a href="https://github.com/alexgeis/tic-tac-toe"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a id="deployed_link" href="https://github.com/alexgeis/tic-tac-toe">View Demo</a>
+    <a id="deployed_link" href="https://alexgeis.github.io/tic-tac-toe/">View Demo</a>
     ·
     <a href="https://github.com/alexgeis/tic-tac-toe/issues">Report Bug</a>
     ·
@@ -70,15 +70,13 @@
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-<a href="https://example.com">
+<!-- <a href="https://example.com">
 <p align="center">
 <img id="product-screenshot" src="images/screenshot.png" alt="Product Name Screen Shot"
 style="display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;"/></p></a>
-
-Search and replace keywords: `deployed_link`, `product-screenshot`, `tic-tac-toe`, `Tic-tac-toe`, `X's and O'x - 3 in a row.`
+    width: 60%;"/></p></a> -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
