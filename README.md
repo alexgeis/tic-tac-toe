@@ -27,8 +27,8 @@
 
   <p align="center">
     X's and O's - 3 in a row.
-    <br />
-    <a href="https://github.com/alexgeis/tic-tac-toe"><strong>Explore the docs »</strong></a>
+    <!-- <br />
+    <a href="https://github.com/alexgeis/tic-tac-toe"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
     <a id="deployed_link" href="https://alexgeis.github.io/tic-tac-toe/">View Demo</a>
