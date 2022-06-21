@@ -1,11 +1,3 @@
-# Tic-tac-toe
-
-X's and O'x - 3 in a row.
-
-## Bugs to resolve
-
-## Future Development
-
 <div id="top"></div>
 
 <!-- PROJECT SHIELDS -->
@@ -31,10 +23,10 @@ X's and O'x - 3 in a row.
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Tic-tac-toe</h3>
 
   <p align="center">
-    project_description
+    X's and O'x - 3 in a row.
     <br />
     <a href="https://github.com/alexgeis/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -86,7 +78,7 @@ style="display: block;
     margin-right: auto;
     width: 60%;"/></p></a>
 
-Search and replace keywords: `deployed_link`, `product-screenshot`, `repo_name`, `project_title`, `project_description`
+Search and replace keywords: `deployed_link`, `product-screenshot`, `repo_name`, `Tic-tac-toe`, `X's and O'x - 3 in a row.`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
