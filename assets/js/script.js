@@ -90,7 +90,6 @@ function computerTurn() {
 	//validate if X or O already exists in targeted square
 	let randoNum = generateNumber0to8();
 	while ([...gameboardEl.children][randoNum].textContent !== "") {
-		console.log("try again!");
 		randoNum = generateNumber0to8();
 	}
 
