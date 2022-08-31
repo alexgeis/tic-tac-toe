@@ -38,11 +38,6 @@ const renderGameboard = () => {
 	}
 };
 
-// console.log(gameboardEl.children);
-// console.log(Array.from(gameboardEl.children));
-const gameSquares = [...gameboardEl.children];
-// console.log(gameSquares);
-
 gameboardEl.addEventListener("click", selectBox);
 
 function selectBox(event) {
@@ -94,10 +89,9 @@ function computerTurn() {
 	}
 
 	const compTurnTimer = setTimeout(() => {
-		// console.log("comp-selected class added");
 		[...gameboardEl.children][randoNum].classList.add("comp-selected");
 		[...gameboardEl.children][randoNum].textContent = "O";
-		// checkWin();
+		checkWin();
 		setCurrentTurn("player");
 		clearTimeout(compTurnTimer);
 	}, 400);
@@ -181,7 +175,7 @@ function checkWin() {
 		//right column
 		([...gameboardEl.children][2].textContent === "O" &&
 			[...gameboardEl.children][5].textContent === "O" &&
-			[...gameboardEl.children][6].textContent === "O") ||
+			[...gameboardEl.children][8].textContent === "O") ||
 		//bottom row
 		([...gameboardEl.children][6].textContent === "O" &&
 			[...gameboardEl.children][7].textContent === "O" &&
@@ -189,11 +183,8 @@ function checkWin() {
 	) {
 		currentWinner = true;
 		gameDisplay.textContent = `Computer wins ya dingus!`;
-		console.log("before", currentCompScore);
 		let updateCompScore = currentCompScore + 1;
-		console.log({ updateCompScore });
 		setCurrentCompScore(updateCompScore);
-		console.log("after", currentCompScore);
 		compScoreDisplay.textContent = `SCORE: ${currentCompScore}`;
 		gameboardEl.removeEventListener("click", selectBox);
 		clearBtn.textContent = "RESET BOARD";
