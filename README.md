@@ -135,8 +135,8 @@ Tic-tac-toe vs. an AI opponent -> click on a square to make your choice, then wa
 
 ## Roadmap
 
-- [ ] **BUG FIX** - computer score is not incrementing by 1 upon adding score (currently incrementing by 5+ depending on context)
 - [ ] input for username
+- [ ] clear user/comp score button
 - [ ] improved styling
   - [ ] colors
   - [ ] player/computer sections
