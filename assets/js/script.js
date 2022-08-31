@@ -24,9 +24,11 @@ function setCurrentTurn(newTurn) {
 }
 function setCurrentUserScore(newScore) {
 	currentUserScore = newScore;
+	// localStorage.setItem("userScore", newScore);
 }
 function setCurrentCompScore(newScore) {
 	currentCompScore = newScore;
+	// localStorage.setItem("compScore", newScore);
 }
 
 const gameboardEl = document.querySelector("#tic-toe-div");
@@ -131,7 +133,7 @@ function checkWin() {
 		//right column
 		([...gameboardEl.children][2].textContent === "X" &&
 			[...gameboardEl.children][5].textContent === "X" &&
-			[...gameboardEl.children][6].textContent === "X") ||
+			[...gameboardEl.children][8].textContent === "X") ||
 		//bottom row
 		([...gameboardEl.children][6].textContent === "X" &&
 			[...gameboardEl.children][7].textContent === "X" &&
@@ -212,6 +214,7 @@ function checkWin() {
 	) {
 		gameDisplay.textContent = `It's a tie! Clear the board to play again.`;
 	} else {
+		return;
 		// if (currentTurn === "player") setCurrentTurn("computer");
 		// setCurrentTurn("player");
 		// console.log("enter check win else");
@@ -220,7 +223,4 @@ function checkWin() {
 
 window.onload = () => {
 	renderGameboard();
-	// setupGrid(DEFAULT_SIZE);
-	// activateButton(DEFAULT_MODE);
-	// colorPicker.value = savedColor;
 };
