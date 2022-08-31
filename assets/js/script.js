@@ -6,9 +6,9 @@ currentYear.textContent = new Date().getFullYear();
 const userScore = localStorage.getItem("userScore");
 const compScore = localStorage.getItem("compScore");
 const gameTurn = localStorage.getItem("gameTurn");
-const DEFAULT_TURN = "player" || gameTurn;
-const DEFAULT_USER_SCORE = 0 || userScore;
-const DEFAULT_COMP_SCORE = 0 || compScore;
+const DEFAULT_TURN = gameTurn || "player";
+const DEFAULT_USER_SCORE = userScore || 0;
+const DEFAULT_COMP_SCORE = compScore || 0;
 //state variables
 let currentTurn = DEFAULT_TURN;
 let currentUserScore = DEFAULT_USER_SCORE;
@@ -38,8 +38,11 @@ const renderGameboard = () => {
 	}
 };
 
-const gameSquares = gameboardEl.children;
-const gameSquaresArr = [...gameSquares];
+// console.log(gameboardEl.children);
+// console.log(Array.from(gameboardEl.children));
+const gameSquares = [...gameboardEl.children];
+// console.log(gameSquares);
+
 gameboardEl.addEventListener("click", selectBox);
 
 function selectBox(event) {
@@ -50,7 +53,7 @@ function selectBox(event) {
 		// if (ticDivs[i].classlist.contains("selected")) {}
 		ticDivs[i].classList.remove("selected", "comp-selected");
 	}
-	element.classList.toggle("selected");
+	element.classList.add("selected");
 
 	element.textContent = "X";
 	checkWin();
@@ -73,7 +76,7 @@ function clearBoard() {
 }
 
 const generateNumber0to8 = () => Math.floor(Math.random() * 9);
-let randoNum = generateNumber0to8();
+
 function computerTurn() {
 	//valide if someone has already won
 	if (currentWinner === true) return;
@@ -85,19 +88,20 @@ function computerTurn() {
 	if (contentArray.length === 9) return;
 
 	//validate if X or O already exists in targeted square
-	if ([...gameboardEl.children][randoNum].textContent !== "") {
+	let randoNum = generateNumber0to8();
+	while ([...gameboardEl.children][randoNum].textContent !== "") {
+		console.log("try again!");
 		randoNum = generateNumber0to8();
-		computerTurn();
 	}
 
 	const compTurnTimer = setTimeout(() => {
-		console.log("comp-selected class added");
+		// console.log("comp-selected class added");
 		[...gameboardEl.children][randoNum].classList.add("comp-selected");
 		[...gameboardEl.children][randoNum].textContent = "O";
 		// checkWin();
 		setCurrentTurn("player");
 		clearTimeout(compTurnTimer);
-	}, 700);
+	}, 400);
 }
 
 const userScoreDisplay = document.querySelector("#player-score");
@@ -145,7 +149,7 @@ function checkWin() {
 		currentUserScore++;
 		setCurrentUserScore(currentUserScore);
 		console.log({ currentUserScore });
-		userScoreDisplay.textContent = `Score: ${currentUserScore}`;
+		userScoreDisplay.textContent = `SCORE: ${currentUserScore}`;
 		gameboardEl.removeEventListener("click", selectBox);
 		clearBtn.textContent = "RESET BOARD";
 		// return true;
@@ -186,10 +190,12 @@ function checkWin() {
 	) {
 		currentWinner = true;
 		gameDisplay.textContent = `Computer wins ya dingus!`;
-		currentCompScore++;
-		setCurrentCompScore(currentCompScore);
-		console.log({ currentCompScore });
-		compScoreDisplay.textContent = `Score: ${currentCompScore}`;
+		console.log("before", currentCompScore);
+		let updateCompScore = currentCompScore + 1;
+		console.log({ updateCompScore });
+		setCurrentCompScore(updateCompScore);
+		console.log("after", currentCompScore);
+		compScoreDisplay.textContent = `SCORE: ${currentCompScore}`;
 		gameboardEl.removeEventListener("click", selectBox);
 		clearBtn.textContent = "RESET BOARD";
 		// return false;
@@ -218,8 +224,7 @@ function checkWin() {
 	} else {
 		// if (currentTurn === "player") setCurrentTurn("computer");
 		// setCurrentTurn("player");
-		console.log("enter check win else");
-		// else
+		// console.log("enter check win else");
 	}
 }
 
