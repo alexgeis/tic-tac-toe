@@ -135,7 +135,7 @@ Tic-tac-toe vs. an AI opponent -> click on a square to make your choice, then wa
 
 ## Roadmap
 
-- [ ] input for username
+- [x] input for username
 - [ ] clear user/comp score button
 - [ ] improved styling
   - [ ] colors
