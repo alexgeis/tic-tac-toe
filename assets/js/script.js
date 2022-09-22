@@ -223,4 +223,6 @@ function checkWin() {
 
 window.onload = () => {
 	renderGameboard();
+	const username = prompt("What's your name, buddy?");
+	document.getElementById("player-name").textContent = username;
 };
